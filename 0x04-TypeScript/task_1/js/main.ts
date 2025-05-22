@@ -123,3 +123,18 @@ function createEmployee(salary: number | string): DirectorInterface | TeacherInt
         }  
     }
 }
+
+//Creating functions specific to employees
+function isDirector(employee: DirectorInterface | TeacherInterface): employee is Director {
+    return (employee instanceof Director); 
+}
+
+function executeWork(employee: DirectorInterface | TeacherInterface): string {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    } else {
+        return employee.workTeacherTasks();
+    }
+}
+
+console.log(executeWork(createEmployee(800)))
