@@ -138,3 +138,19 @@ function executeWork(employee: DirectorInterface | TeacherInterface): string {
 }
 
 console.log(executeWork(createEmployee(800)))
+
+
+//String literal types
+type Subjects = "Math" | "History";
+
+function teachClass(todayClass: Subjects): string {
+    switch (todayClass) {
+        case "Math":
+            return "Teaching Math";
+        case "History":
+            return "Teaching History";
+        default:
+            return "Unknown subject";
+    }
+}
+console.log(teachClass("History"));
